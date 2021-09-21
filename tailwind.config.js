@@ -11,7 +11,11 @@ module.exports = {
       'serif': [...defaultTheme.fontFamily.serif],
       'mono': [...defaultTheme.fontFamily.mono],
     },
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        
+      }
+    },
   },
   variants: {
     extend: {},
