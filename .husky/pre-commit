@@ -1,0 +1,28 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo 'Checking types, formatting, linting files before committing...'
+
+# Check prettier standards
+npm run check-format ||
+(
+  echo 'Prettier check failed! Run "npm run format", add changes and try commit again.'
+  false;
+)
+
+# Check ESLint standards
+npm run check-lint ||
+(
+  echo 'ESLint check failed! Make the required changes listed above, add changes and try to commit again.'
+  false;
+)
+
+# Check tsconfig standards
+npm run check-types ||
+(
+  echo 'Make changes required above and try again.'
+  false;
+)
+
+# Everything is ok, lets commit
+echo 'Good job! Everything is OK. Committing now...'
