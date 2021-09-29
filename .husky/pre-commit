@@ -24,12 +24,5 @@ npm run check-types ||
   false;
 )
 
-# Everything went well so far, lets build
-npm run build ||
-(
-  echo 'Next build failed. See the errors above.'
-  false;
-)
-
 # Everything is ok, lets commit
 echo 'Good job! Everything is OK. Committing now...'

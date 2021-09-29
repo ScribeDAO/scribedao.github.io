@@ -12,7 +12,7 @@
     "check-format": "prettier --check src/**/*.{ts,tsx,js,jsx}",
     "check-lint": "eslint --ext ts --ext tsx --ext js src/",
     "format": "prettier --write src/**/*.{ts,tsx,js,jsx}",
-    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types",
     "prepare": "husky install"
   },
   "dependencies": {
