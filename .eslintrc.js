@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['plugin:react/recommended', 'standard', 'prettier-standard'],
+  extends: [
+    'next',
+    'plugin:react/recommended',
+    'standard',
+    'prettier-standard'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -19,6 +24,7 @@ module.exports = {
     }
   },
   rules: {
+    '@next/next/no-document-import-in-page': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'react/jsx-uses-react': 'off',
