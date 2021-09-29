@@ -1,10 +1,11 @@
+import React from 'react'
 import Head from 'next/head'
 
 import Footer from './footer'
 
 export default function Layout({
   children,
-  title = 'ScribeDAO',
+  title = 'ScribeDAO'
 }: {
   children: React.ReactNode
   title?: string

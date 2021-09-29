@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import CustomLink from './customLink'
 
@@ -17,7 +18,7 @@ export default function Footer() {
             />
           </div>
           <p className="mb-6 xl:text-lg">
-            We summarize crypto articles that you don't have time to read
+            We summarize crypto articles that you don&apos;t have time to read
             entirely. Interested in Scribing with us?{' '}
             <CustomLink className="underline whitespace-nowrap" href="#">
               Apply here!
@@ -61,8 +62,7 @@ export default function Footer() {
                 <CustomLink
                   key={name}
                   className="xl:text-lg mb-2 md:mb-3"
-                  href={href}
-                >
+                  href={href}>
                   {name}
                 </CustomLink>
               ))}
@@ -106,8 +106,8 @@ const navList = [
       { name: 'Mission', href: '#' },
       { name: 'Community', href: '#' },
       { name: 'Governance', href: '#' },
-      { name: 'Team', href: '#' },
-    ],
+      { name: 'Team', href: '#' }
+    ]
   },
   {
     title: 'Discover',
@@ -117,8 +117,8 @@ const navList = [
       { name: 'Forum', href: '#' },
       { name: 'Github', href: '#' },
       { name: 'Newsletter', href: '#' },
-      { name: 'Downloads', href: '#' },
-    ],
+      { name: 'Downloads', href: '#' }
+    ]
   },
   {
     title: 'Support',
@@ -126,15 +126,15 @@ const navList = [
       { name: 'Docs', href: '#' },
       { name: "FAQ's", href: '#' },
       { name: 'Contact Us', href: '#' },
-      { name: 'Discord Support', href: '#' },
-    ],
+      { name: 'Discord Support', href: '#' }
+    ]
   },
   {
     title: 'Other Links',
     items: [
       { name: 'Partners', href: '#' },
       { name: 'SCRIBE Token', href: '#' },
-      { name: 'Token Utilities', href: '#' },
-    ],
-  },
+      { name: 'Token Utilities', href: '#' }
+    ]
+  }
 ]

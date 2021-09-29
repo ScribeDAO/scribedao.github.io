@@ -1,9 +1,10 @@
+import React from 'react'
 import Link from 'next/link'
 
 export default function CustomLink({
   children,
   className,
-  href = '#',
+  href = '#'
 }: {
   children: React.ReactNode
   className?: string
@@ -18,8 +19,7 @@ export default function CustomLink({
       href={href}
       className={className}
       target="_blank"
-      rel="noopener noreferrer"
-    >
+      rel="noopener noreferrer">
       {children}
     </a>
   )
