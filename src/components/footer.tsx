@@ -20,37 +20,39 @@ export default function Footer() {
           <p className="mb-6 xl:text-lg">
             We summarize crypto articles that you don&apos;t have time to read
             entirely. Interested in Scribing with us?{' '}
-            <CustomLink className="underline whitespace-nowrap" href="#">
+            <CustomLink
+              className="hover:text-gray-800 underline whitespace-nowrap"
+              href="#">
               Apply here!
             </CustomLink>
           </p>
           <div>
             <h5>Connect with us</h5>
             <div>
-              <div className="inline-flex mr-4">
+              <CustomLink className="hover:text-gray-800 mr-4" href="#">
                 <Image
                   src="/static/icons/twitter.png"
                   alt="Twitter"
                   width={25}
                   height={25}
                 />
-              </div>
-              <div className="inline-flex mr-4">
+              </CustomLink>
+              <CustomLink className="hover:text-gray-800 mr-4" href="#">
                 <Image
                   src="/static/icons/github.png"
                   alt="Github"
                   width={25}
                   height={25}
                 />
-              </div>
-              <div className="inline-flex">
+              </CustomLink>
+              <CustomLink className="hover:text-gray-800 mr-4" href="#">
                 <Image
                   src="/static/icons/discord.png"
                   alt="Discord"
                   width={25}
                   height={25}
                 />
-              </div>
+              </CustomLink>
             </div>
           </div>
         </div>
@@ -61,7 +63,7 @@ export default function Footer() {
               {items.map(({ name, href }) => (
                 <CustomLink
                   key={name}
-                  className="xl:text-lg mb-2 md:mb-3"
+                  className="hover:text-gray-800 xl:text-lg mb-2 md:mb-3"
                   href={href}>
                   {name}
                 </CustomLink>
@@ -76,19 +78,27 @@ export default function Footer() {
           © 2021 ScribeDAO. All Rights Reserved
         </p>
         <div>
-          <CustomLink className="whitespace-nowrap" href="#">
+          <CustomLink
+            className="hover:text-gray-800 whitespace-nowrap"
+            href="#">
             Privacy Policy
           </CustomLink>
           {' | '}
-          <CustomLink className="whitespace-nowrap" href="#">
+          <CustomLink
+            className="hover:text-gray-800 whitespace-nowrap"
+            href="#">
             Terms & Conditions
           </CustomLink>
           {' | '}
-          <CustomLink className="whitespace-nowrap" href="#">
+          <CustomLink
+            className="hover:text-gray-800 whitespace-nowrap"
+            href="#">
             Cookie Policy
           </CustomLink>
           {' | '}
-          <CustomLink className="whitespace-nowrap" href="#">
+          <CustomLink
+            className="hover:text-gray-800 whitespace-nowrap"
+            href="#">
             Disclaimer
           </CustomLink>
         </div>
