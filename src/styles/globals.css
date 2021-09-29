@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply text-gray-500;
+}
+
+h5 {
+  @apply text-lg xl:text-xl 2xl:text-2xl font-medium text-gray-900 mb-4 md:mb-6;
+}
+
+hr {
+  @apply border-0 h-0.5 bg-gradient-to-r from-white via-gray-200 to-white;
+}
