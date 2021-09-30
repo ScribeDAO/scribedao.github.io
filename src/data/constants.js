@@ -1,3 +1,31 @@
+export const HEADER_NAV_LIST = [
+  {
+    title: 'Home',
+    href: '/'
+  },
+  {
+    title: 'The DAO',
+    href: ''
+  },
+  {
+    title: 'SCRIBE Token',
+    href: ''
+  },
+  {
+    title: 'Discover',
+    href: ''
+  },
+  {
+    title: 'Partners',
+    href: '#'
+  },
+  {
+    title: 'Support',
+    href: '#'
+  },
+
+]
+
 export const FOOTER_NAV_LIST = [
   {
     title: 'About',

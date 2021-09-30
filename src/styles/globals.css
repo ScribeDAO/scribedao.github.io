@@ -7,7 +7,7 @@ html {
 }
 
 h5 {
-  @apply text-lg xl:text-xl 2xl:text-2xl font-medium text-gray-900 mb-4 md:mb-6;
+  @apply text-base md:text-lg font-medium text-gray-900 mb-4 md:mb-6;
 }
 
 hr {
