@@ -5,11 +5,25 @@ export const HEADER_NAV_LIST = [
   },
   {
     title: 'The DAO',
-    href: ''
+    href: '',
+    sublinks: [
+      { name: 'About', href: '#' },
+      { name: 'Roadmap', href: '#' },
+      { name: 'Mission', href: '#' },
+      { name: 'Community', href: '#' },
+      { name: 'Governance', href: '#' },
+      { name: 'Team', href: '#' }
+    ]
+
   },
   {
     title: 'SCRIBE Token',
-    href: ''
+    href: '',
+    sublinks: [
+      { name: 'Token', href: '#' },
+      { name: 'Utilities', href: '#' },
+      { name: 'Juicebox Page', href: '#' }
+    ]
   },
   {
     title: 'Discover',

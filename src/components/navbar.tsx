@@ -8,8 +8,8 @@ import { HEADER_NAV_LIST } from '../data/constants'
 function Nav() {
   return (
       <nav>
-        <section className="lg:container lg:mx-auto lg:px-20 px-4 sm:px-8 md:px-18 my-5">
-          <section className="flex justify-between">
+        <section className="lg:container lg:mx-auto lg:px-20 xl:px-28 px-4 sm:px-8 md:px-18 my-5">
+          <section className="flex justify-between items-center">
             <section>
               <CustomLink href="/">
                 <Image
@@ -21,13 +21,13 @@ function Nav() {
               </CustomLink>
             </section>
             {/* lg nav bar */}
-            <nav className="hidden md:flex text-black space-x-8">
+            <nav className="hidden md:flex text-black space-x-8 md:text-sm lg:text-lg">
               {HEADER_NAV_LIST.map(({ title, href }) => (
                 <CustomLink
                   key={title}
                   href={href}
                 >
-                  <h5>{title}</h5>
+                  <p>{title}</p>
                 </CustomLink>
               ))}
             </nav>
