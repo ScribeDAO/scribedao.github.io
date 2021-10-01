@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
@@ -22,7 +22,7 @@ function Nav() {
             </CustomLink>
           </section>
           {/* lg nav bar */}
-          <nav className="hidden md:flex items-baseline text-black space-x-8 md:text-sm lg:text-lg">
+          <nav className="hidden md:flex items-baseline text-black space-x-8 md:text-base xl:text-lg">
             {HEADER_NAV_LIST.map(({ title, href, sublinks }) =>
               sublinks ? (
                 <Popover key={title}>
@@ -33,7 +33,21 @@ function Nav() {
                         <ChevronDownIcon className="h-4 w-4" />
                       </Popover.Button>
 
-                      <Transition></Transition>
+                      <Transition
+                        as={Fragment}
+                        enter="transition duration-200 ease-out">
+                        <Popover.Panel className="absolute z-10 transform">
+                          <section className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                            <section className="relative">
+                              {sublinks.map((link) => (
+                                <CustomLink key={title}>
+                                  <p>{link.name}</p>
+                                </CustomLink>
+                              ))}
+                            </section>
+                          </section>
+                        </Popover.Panel>
+                      </Transition>
                     </>
                   )}
                 </Popover>
