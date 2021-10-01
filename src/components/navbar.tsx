@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Popover, Transition } from "@headlessui/react"
 import Image from 'next/image'
 import CustomLink from "./customLink"
 
@@ -22,13 +22,29 @@ function Nav() {
             </section>
             {/* lg nav bar */}
             <nav className="hidden md:flex text-black space-x-8 md:text-sm lg:text-lg">
-              {HEADER_NAV_LIST.map(({ title, href }) => (
-                <CustomLink
-                  key={title}
-                  href={href}
-                >
-                  <p>{title}</p>
-                </CustomLink>
+              {HEADER_NAV_LIST.map(({ title, href, sublinks }) => (
+                sublinks ? 
+                  <Popover>
+                    {({ open }) => (
+                      <>
+                        <Popover.Button>
+                          <span>{title}</span>
+                          <ChevronDownIcon />
+                        </Popover.Button>
+
+                        <Transition>
+
+                        </Transition>
+                      </>
+                    )}
+                  </Popover>
+                  :
+                  <CustomLink
+                    key={title}
+                    href={href}
+                  >
+                    <p>{title}</p>
+                  </CustomLink>
               ))}
             </nav>
           </section> 

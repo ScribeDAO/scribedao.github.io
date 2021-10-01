@@ -27,7 +27,15 @@ export const HEADER_NAV_LIST = [
   },
   {
     title: 'Discover',
-    href: ''
+    href: '',
+    sublinks: [
+      { name: 'Learn', href: '#' },
+      { name: 'Blog', href: '#' },
+      { name: 'Forum', href: '#' },
+      { name: 'Github', href: '#' },
+      { name: 'Newsletter', href: '#' },
+      { name: 'Downloads', href: '#' }
+    ]
   },
   {
     title: 'Partners',
