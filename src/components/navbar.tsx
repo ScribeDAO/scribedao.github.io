@@ -41,7 +41,7 @@ function Nav() {
                       </Popover.Button>
 
                       <Transition
-                        show={open}
+                        show={!!open}
                         as={Fragment}
                         enter="transition duration-200 ease-out"
                         enterFrom="opacity-0 translate-y-1"
@@ -81,7 +81,6 @@ function Nav() {
             className="-mr-2 -my-2 md:hidden"
             onClick={() => {
               setIsMobileMenuOpen(true)
-              console.log('clicked!')
             }}>
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
@@ -93,7 +92,7 @@ function Nav() {
 
       {/* mobile nav links :open */}
       {/* <section className="md:hidden">x</section> */}
-      <Transition show={isMobileMenuOpen} as={Fragment}>
+      <Transition show={!!isMobileMenuOpen} as={Fragment}>
         <Dialog
           as="aside"
           className="fixed inset-0 overflow-hidden"
@@ -132,11 +131,7 @@ function Nav() {
                     <div className="mt-6 relative flex-1 px-4 sm:px-6 grid grid-cols-1">
                       {HEADER_NAV_LIST.map(({ title, href, sublinks }) =>
                         sublinks ? (
-                          <Menu
-                            show={isOpen}
-                            as="div"
-                            key={title}
-                            className="relative">
+                          <Menu as="div" key={title} className="relative">
                             {({ open }) => (
                               <>
                                 <Menu.Button className="flex items-center justify-between my-2">
@@ -145,7 +140,6 @@ function Nav() {
                                 </Menu.Button>
                                 {open && (
                                   <Transition.Child
-                                    show={open}
                                     as={Fragment}
                                     enter="transition duration-200 ease-out"
                                     enterFrom="opacity-0 translate-y-1"
@@ -154,9 +148,13 @@ function Nav() {
                                     leaveFrom="opacity-100 translate-y-0"
                                     leaveTo="opacity-0 translate-y-1">
                                     <Menu.Items className="transform">
-                                      <div>
-                                        <Menu.Item as="section">Link</Menu.Item>
-                                      </div>
+                                      {sublinks.map(({ name, href }) => (
+                                        <Menu.Item key={name} as="section">
+                                          <CustomLink href={href}>
+                                            {name}
+                                          </CustomLink>
+                                        </Menu.Item>
+                                      ))}
                                     </Menu.Items>
                                   </Transition.Child>
                                 )}
