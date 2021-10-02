@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon, MenuIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import CustomLink from './customLink'
 
@@ -8,7 +8,7 @@ import { HEADER_NAV_LIST } from '../data/constants'
 
 function Nav() {
   return (
-    <nav>
+    <Popover>
       <section className="lg:container lg:mx-auto lg:px-20 xl:px-28 px-4 sm:px-8 md:px-18 my-5">
         <section className="flex justify-between items-center">
           <section>
@@ -21,8 +21,16 @@ function Nav() {
               />
             </CustomLink>
           </section>
+          <div className="-mr-2 -my-2 md:hidden">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span className="sr-only">Open menu</span>
+              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
+          </div>
           {/* lg nav bar */}
-          <nav className="hidden md:flex items-baseline text-black space-x-8 md:text-base xl:text-lg">
+          <Popover.Group
+            as="nav"
+            className="hidden md:flex items-baseline text-black space-x-8 md:text-base xl:text-lg">
             {HEADER_NAV_LIST.map(({ title, href, sublinks }) =>
               sublinks ? (
                 <Popover key={title}>
@@ -35,12 +43,20 @@ function Nav() {
 
                       <Transition
                         as={Fragment}
-                        enter="transition duration-200 ease-out">
+                        enter="transition duration-200 ease-out"
+                        enterFrom="opacity-0 translate-y-1"
+                        enterTo="opacity-100 translate-y-0"
+                        leave="transition ease-in duration-150"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 translate-y-1">
                         <Popover.Panel className="absolute z-10 transform">
                           <section className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                            <section className="relative">
+                            <section className="relative px-5 py-2 bg-white">
                               {sublinks.map((link) => (
-                                <CustomLink key={title}>
+                                <CustomLink
+                                  key={link.name}
+                                  href={link.href}
+                                  className="m-1">
                                   <p>{link.name}</p>
                                 </CustomLink>
                               ))}
@@ -57,14 +73,14 @@ function Nav() {
                 </CustomLink>
               )
             )}
-          </nav>
+          </Popover.Group>
         </section>
       </section>
 
       {/* mobile nav links :open */}
-      <section className="md:hidden"></section>
+      {/* <section className="md:hidden">x</section> */}
       <hr />
-    </nav>
+    </Popover>
   )
 }
 
