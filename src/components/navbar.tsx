@@ -112,7 +112,7 @@ function Nav() {
             {/* mobile menu */}
             <div className="fixed inset-y-0 right-0 max-w-full flex">
               <Transition.Child>
-                <div className="relative w-screen max-w-md">
+                <div className="relative w-screen h-screen max-w-xs md:max-w-md">
                   <div className="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
                     <button
                       type="button"
@@ -126,32 +126,34 @@ function Nav() {
                       <XIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
-                  <section className="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
-                    <div className="px-4 sm:px-6">top of da menu</div>
-                    <div className="mt-6 relative flex-1 px-4 sm:px-6 grid grid-cols-1">
+                  <section className="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
+                    <div className="relative mt-4 sm:px-6 grid grid-cols-1 justify-start">
                       {HEADER_NAV_LIST.map(({ title, href, sublinks }) =>
                         sublinks ? (
-                          <Menu as="div" key={title} className="relative">
+                          <Menu
+                            as="div"
+                            key={title}
+                            className="relative border-b border-solid border-black border-1 border-opacity-20">
                             {({ open }) => (
                               <>
-                                <Menu.Button className="flex items-center justify-between my-2">
-                                  <span>{title}</span>
+                                <Menu.Button className="flex items-center justify-between">
+                                  <span className="my-4 ml-6">{title}</span>
                                   <ChevronDownIcon className="h-4 w-4" />
                                 </Menu.Button>
                                 {open && (
                                   <Transition.Child
                                     as={Fragment}
-                                    enter="transition duration-200 ease-out"
+                                    enter="transition duration-400 ease-in-out"
                                     enterFrom="opacity-0 translate-y-1"
                                     enterTo="opacity-100 translate-y-0"
-                                    leave="transition ease-in duration-150"
+                                    leave="transition ease-in-out duration-400"
                                     leaveFrom="opacity-100 translate-y-0"
                                     leaveTo="opacity-0 translate-y-1">
-                                    <Menu.Items className="transform">
+                                    <Menu.Items className="transform border-b border-solid border-black border-1 border-opacity-20">
                                       {sublinks.map(({ name, href }) => (
                                         <Menu.Item key={name} as="section">
                                           <CustomLink href={href}>
-                                            {name}
+                                            <p className="my-4 ml-6">{name}</p>
                                           </CustomLink>
                                         </Menu.Item>
                                       ))}
@@ -162,8 +164,11 @@ function Nav() {
                             )}
                           </Menu>
                         ) : (
-                          <CustomLink key={title} href={href} className="my-2">
-                            <p>{title}</p>
+                          <CustomLink
+                            key={title}
+                            href={href}
+                            className="my-4 border-b border-solid border-black border-1 border-opacity-20">
+                            <p className="ml-6">{title}</p>
                           </CustomLink>
                         )
                       )}
