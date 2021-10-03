@@ -91,7 +91,6 @@ function Nav() {
       </section>
 
       {/* mobile nav links :open */}
-      {/* <section className="md:hidden">x</section> */}
       <Transition show={!!isMobileMenuOpen} as={Fragment}>
         <Dialog
           as="aside"
@@ -99,19 +98,19 @@ function Nav() {
           onClose={setIsOpen}>
           <div className="absolute inset-0 overflow-hidden">
             {/* grey overlay */}
-            <Transition.Child
-              as={Fragment}
-              enter="ease-in-out duration-500"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in-out duration-500"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0">
+            <Transition.Child>
               <Dialog.Overlay className="absolute inset-0 bg-gray-100 bg-opacity-50 transition opacity" />
             </Transition.Child>
             {/* mobile menu */}
             <div className="fixed inset-y-0 right-0 max-w-full flex">
-              <Transition.Child>
+              <Transition.Child
+                as={Fragment}
+                enter="transition slide-in duration-400"
+                enterFrom="opacity-90"
+                enterTo="opacity-100"
+                leave="transition slide-out duration-400"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-100">
                 <div className="relative w-screen h-screen max-w-xs md:max-w-md">
                   <div className="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
                     <button
@@ -137,23 +136,25 @@ function Nav() {
                             {({ open }) => (
                               <>
                                 <Menu.Button className="flex items-center justify-between">
-                                  <span className="my-4 ml-6">{title}</span>
+                                  <h5 className="text-lg my-4 ml-6">{title}</h5>
                                   <ChevronDownIcon className="h-4 w-4" />
                                 </Menu.Button>
                                 {open && (
                                   <Transition.Child
                                     as={Fragment}
-                                    enter="transition duration-400 ease-in-out"
-                                    enterFrom="opacity-0 translate-y-1"
-                                    enterTo="opacity-100 translate-y-0"
-                                    leave="transition ease-in-out duration-400"
-                                    leaveFrom="opacity-100 translate-y-0"
-                                    leaveTo="opacity-0 translate-y-1">
-                                    <Menu.Items className="transform border-b border-solid border-black border-1 border-opacity-20">
+                                    enter="transition duration-300 ease-in"
+                                    enterFrom="opacity-0"
+                                    enterTo="opacity-100"
+                                    leave="transition ease-in duration-300"
+                                    leaveFrom="opacity-100"
+                                    leaveTo="opacity-0">
+                                    <Menu.Items className="transform border-t border-solid border-black border-1 border-opacity-20">
                                       {sublinks.map(({ name, href }) => (
                                         <Menu.Item key={name} as="section">
                                           <CustomLink href={href}>
-                                            <p className="my-4 ml-6">{name}</p>
+                                            <h5 className="text-lg font-normal text-gray-600 my-4 ml-6">
+                                              {name}
+                                            </h5>
                                           </CustomLink>
                                         </Menu.Item>
                                       ))}
@@ -167,8 +168,8 @@ function Nav() {
                           <CustomLink
                             key={title}
                             href={href}
-                            className="my-4 border-b border-solid border-black border-1 border-opacity-20">
-                            <p className="ml-6">{title}</p>
+                            className="border-b border-solid border-black border-1 border-opacity-20">
+                            <h5 className="text-lg my-4 ml-6">{title}</h5>
                           </CustomLink>
                         )
                       )}
