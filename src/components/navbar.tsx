@@ -99,7 +99,7 @@ function Nav() {
           <div className="absolute inset-0 overflow-hidden">
             {/* grey overlay */}
             <Transition.Child>
-              <Dialog.Overlay className="absolute inset-0 bg-gray-100 bg-opacity-50 transition opacity" />
+              <Dialog.Overlay className="absolute inset-0 bg-gray-800 bg-opacity-60 transition opacity" />
             </Transition.Child>
             {/* mobile menu */}
             <div className="fixed inset-y-0 right-0 max-w-full flex">
@@ -126,7 +126,7 @@ function Nav() {
                     </button>
                   </div>
                   <section className="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
-                    <div className="relative mt-4 sm:px-6 grid grid-cols-1 justify-start">
+                    <div className="relative mt-2 sm:px-6 grid grid-cols-1 justify-start">
                       {HEADER_NAV_LIST.map(({ title, href, sublinks }) =>
                         sublinks ? (
                           <Menu
@@ -136,23 +136,23 @@ function Nav() {
                             {({ open }) => (
                               <>
                                 <Menu.Button className="flex items-center justify-between">
-                                  <h5 className="text-lg my-4 ml-6">{title}</h5>
+                                  <h5 className="my-4 ml-6">{title}</h5>
                                   <ChevronDownIcon className="h-4 w-4" />
                                 </Menu.Button>
                                 {open && (
                                   <Transition.Child
                                     as={Fragment}
-                                    enter="transition duration-300 ease-in"
+                                    enter="transition duration-300 ease-in-out"
                                     enterFrom="opacity-0"
                                     enterTo="opacity-100"
-                                    leave="transition ease-in duration-300"
+                                    leave="transition ease-in-out duration-300"
                                     leaveFrom="opacity-100"
                                     leaveTo="opacity-0">
                                     <Menu.Items className="transform border-t border-solid border-black border-1 border-opacity-20">
                                       {sublinks.map(({ name, href }) => (
                                         <Menu.Item key={name} as="section">
                                           <CustomLink href={href}>
-                                            <h5 className="text-lg font-normal text-gray-600 my-4 ml-6">
+                                            <h5 className="font-normal text-gray-600 my-4 ml-6">
                                               {name}
                                             </h5>
                                           </CustomLink>
@@ -169,7 +169,7 @@ function Nav() {
                             key={title}
                             href={href}
                             className="border-b border-solid border-black border-1 border-opacity-20">
-                            <h5 className="text-lg my-4 ml-6">{title}</h5>
+                            <h5 className="my-4 ml-6">{title}</h5>
                           </CustomLink>
                         )
                       )}
