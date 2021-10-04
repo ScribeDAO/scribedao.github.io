@@ -26,7 +26,7 @@ function Nav() {
             </CustomLink>
           </section>
 
-          {/* lg nav bar */}
+          {/* md breakpoint nav bar */}
           <Popover
             as="nav"
             className="hidden md:flex items-baseline text-black space-x-8 md:text-base xl:text-lg">
