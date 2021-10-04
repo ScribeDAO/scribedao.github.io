@@ -7,8 +7,6 @@ import CustomLink from './customLink'
 import { HEADER_NAV_LIST } from '../data/constants'
 
 function Nav() {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   return (
@@ -95,7 +93,7 @@ function Nav() {
         <Dialog
           as="aside"
           className="fixed inset-0 overflow-hidden"
-          onClose={setIsOpen}>
+          onClose={setIsMobileMenuOpen}>
           <div className="absolute inset-0 overflow-hidden">
             {/* grey overlay */}
             <Transition.Child>

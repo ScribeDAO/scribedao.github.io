@@ -14,7 +14,6 @@ export const HEADER_NAV_LIST = [
       { name: 'Governance', href: '#' },
       { name: 'Team', href: '#' }
     ]
-
   },
   {
     title: 'SCRIBE Token',
@@ -44,8 +43,7 @@ export const HEADER_NAV_LIST = [
   {
     title: 'Support',
     href: '#'
-  },
-
+  }
 ]
 
 export const FOOTER_NAV_LIST = [
