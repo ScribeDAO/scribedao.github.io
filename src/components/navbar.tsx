@@ -6,7 +6,7 @@ import CustomLink from './customLink'
 
 import { HEADER_NAV_LIST } from '../data/constants'
 
-function Nav() {
+export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   return (
@@ -183,5 +183,3 @@ function Nav() {
     </nav>
   )
 }
-
-export default Nav
