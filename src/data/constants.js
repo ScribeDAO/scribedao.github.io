@@ -1,3 +1,51 @@
+export const HEADER_NAV_LIST = [
+  {
+    title: 'Home',
+    href: '/'
+  },
+  {
+    title: 'The DAO',
+    href: '',
+    sublinks: [
+      { name: 'About', href: '#' },
+      { name: 'Roadmap', href: '#' },
+      { name: 'Mission', href: '#' },
+      { name: 'Community', href: '#' },
+      { name: 'Governance', href: '#' },
+      { name: 'Team', href: '#' }
+    ]
+  },
+  {
+    title: 'SCRIBE Token',
+    href: '',
+    sublinks: [
+      { name: 'Token', href: '#' },
+      { name: 'Utilities', href: '#' },
+      { name: 'Juicebox Page', href: '#' }
+    ]
+  },
+  {
+    title: 'Discover',
+    href: '',
+    sublinks: [
+      { name: 'Learn', href: '#' },
+      { name: 'Blog', href: '#' },
+      { name: 'Forum', href: '#' },
+      { name: 'Github', href: '#' },
+      { name: 'Newsletter', href: '#' },
+      { name: 'Downloads', href: '#' }
+    ]
+  },
+  {
+    title: 'Partners',
+    href: '#'
+  },
+  {
+    title: 'Support',
+    href: '#'
+  }
+]
+
 export const FOOTER_NAV_LIST = [
   {
     title: 'About',
