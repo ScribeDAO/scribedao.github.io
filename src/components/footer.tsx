@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import CustomLink from './customLink'
+import ScribeDAOLogo from '../../public/static/ScribeDAO_Logo.svg'
 
 import { FOOTER_NAV_LIST } from '../data/constants'
 
@@ -11,7 +12,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-4 lg:col-span-2">
           <div className="mb-6 lg:mb-10 w-60 md:w-80 lg:w-60">
             <Image
-              src="/static/logo_footer.png"
+              src={ScribeDAOLogo}
               alt="ScribeDAO"
               layout="responsive"
               width={180}
