@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import CustomLink from './customLink'
 import ScribeDAOLogo from '../../public/static/ScribeDAO_Logo.svg'
+import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa'
 
 import { FOOTER_NAV_LIST } from '../data/constants'
 
@@ -30,30 +31,15 @@ export default function Footer() {
           </p>
           <div>
             <h5>Connect with us</h5>
-            <div>
+            <div className="flex">
               <CustomLink className="hover:text-gray-800 mr-4" href="#">
-                <Image
-                  src="/static/icons/twitter.png"
-                  alt="Twitter"
-                  width={25}
-                  height={25}
-                />
+                <FaTwitter className="text-2xl" />
               </CustomLink>
               <CustomLink className="hover:text-gray-800 mr-4" href="#">
-                <Image
-                  src="/static/icons/github.png"
-                  alt="Github"
-                  width={25}
-                  height={25}
-                />
+                <FaGithub className="text-2xl" />
               </CustomLink>
               <CustomLink className="hover:text-gray-800 mr-4" href="#">
-                <Image
-                  src="/static/icons/discord.png"
-                  alt="Discord"
-                  width={25}
-                  height={25}
-                />
+                <FaDiscord className="text-2xl" />
               </CustomLink>
             </div>
           </div>
