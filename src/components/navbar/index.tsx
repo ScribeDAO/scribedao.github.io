@@ -2,10 +2,10 @@ import React, { Fragment, useState } from 'react'
 import { Dialog, Menu, Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
-import CustomLink from './customLink'
-import ScribeDAOLogo from '../../public/static/ScribeDAO_Logo.svg'
+import CustomLink from '../customLink'
+import ScribeDAOLogo from '../../../public/static/ScribeDAO_Logo.svg'
 
-import { HEADER_NAV_LIST } from '../data/constants'
+import { HEADER_NAV_LIST } from '../../data/constants'
 
 export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
