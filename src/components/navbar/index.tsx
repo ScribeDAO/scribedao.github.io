@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { Popover } from '@headlessui/react'
-import { MenuIcon, MoonIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import CustomLink from '../customLink'
 import ScribeDAOLogo from '../../../public/static/ScribeDAO_Logo.svg'
@@ -17,20 +15,17 @@ export default function Nav() {
     <nav>
       <section className="lg:container lg:mx-auto lg:px-20 xl:px-28 px-4 sm:px-8 md:px-18 my-5">
         <section className="flex justify-between items-center">
-          <section>
-            <CustomLink href="/">
-              <Image
-                src={ScribeDAOLogo}
-                alt="ScribeDAO"
-                width={180}
-                height={35}
-              />
-            </CustomLink>
-          </section>
+          <CustomLink href="/">
+            <Image
+              src={ScribeDAOLogo}
+              alt="ScribeDAO"
+              width={180}
+              height={35}
+            />
+          </CustomLink>
 
-          {/* md breakpoint nav bar */}
           <HeaderNav menuItems={HEADER_NAV_LIST} />
-          {/* mobile view hamburger menu */}
+
           <MobileMenuToggle toggle={setIsMobileMenuOpen} />
         </section>
       </section>
