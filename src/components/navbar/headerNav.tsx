@@ -3,16 +3,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 import CustomLink from '../customLink'
-
-interface MenuItemProps {
-  menuItems: MenuItemType[]
-}
-
-type MenuItemType = {
-  title: string
-  href: string
-  sublinks?: MenuItemType[]
-}
+import MenuItemProps from '../../shared/IMenuItems'
 
 export default function HeaderNav({ menuItems }: MenuItemProps) {
   return (

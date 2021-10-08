@@ -44,7 +44,7 @@ export default function MobileSideNavMenu({
                   </button>
                 </div>
                 <section className="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
-                  <div className="relative mt-2 sm:px-6 grid grid-cols-1 justify-start">
+                  <nav className="relative mt-2 sm:px-6 grid grid-cols-1 justify-start">
                     {HEADER_NAV_LIST.map(({ title, href, sublinks }) =>
                       sublinks ? (
                         <Menu
@@ -91,7 +91,7 @@ export default function MobileSideNavMenu({
                         </CustomLink>
                       )
                     )}
-                  </div>
+                  </nav>
                 </section>
               </div>
             </Transition.Child>
