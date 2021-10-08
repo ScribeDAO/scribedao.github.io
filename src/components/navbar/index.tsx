@@ -48,6 +48,7 @@ export default function Nav() {
       <MobileSideNavMenu
         show={!!isMobileMenuOpen}
         onClose={setIsMobileMenuOpen}
+        menuItems={HEADER_NAV_LIST}
       />
       <hr />
     </nav>

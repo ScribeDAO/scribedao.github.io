@@ -3,14 +3,16 @@ import { Transition, Dialog, Menu } from '@headlessui/react'
 import { XIcon, ChevronDownIcon } from '@heroicons/react/solid'
 
 import CustomLink from '../customLink'
-import { HEADER_NAV_LIST } from '../../data/constants'
+import MenuItemProps from '../../shared/IMenuItems'
 
 export default function MobileSideNavMenu({
   show,
-  onClose
+  onClose,
+  menuItems
 }: {
   show: boolean
   onClose: Function
+  menuItems: MenuItemProps
 }) {
   return (
     <Transition show={show} as={Fragment}>
@@ -45,7 +47,7 @@ export default function MobileSideNavMenu({
                 </div>
                 <section className="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
                   <nav className="relative mt-2 sm:px-6 grid grid-cols-1 justify-start">
-                    {HEADER_NAV_LIST.map(({ title, href, sublinks }) =>
+                    {menuItems.map(({ title, href, sublinks }) =>
                       sublinks ? (
                         <Menu
                           as="div"
@@ -67,11 +69,11 @@ export default function MobileSideNavMenu({
                                   leaveFrom="opacity-100"
                                   leaveTo="opacity-0">
                                   <Menu.Items className="transform border-t border-solid border-black border-1 border-opacity-20">
-                                    {sublinks.map(({ name, href }) => (
-                                      <Menu.Item key={name} as="section">
+                                    {sublinks.map(({ title, href }) => (
+                                      <Menu.Item key={title} as="section">
                                         <CustomLink href={href}>
                                           <h5 className="font-normal text-gray-600 my-4 ml-6">
-                                            {name}
+                                            {title}
                                           </h5>
                                         </CustomLink>
                                       </Menu.Item>
