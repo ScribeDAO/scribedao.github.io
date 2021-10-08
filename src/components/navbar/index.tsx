@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react'
-import { Dialog, Menu, Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/solid'
+import React, { useState } from 'react'
+import { Popover } from '@headlessui/react'
+import { MenuIcon, MoonIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import CustomLink from '../customLink'
 import ScribeDAOLogo from '../../../public/static/ScribeDAO_Logo.svg'
@@ -8,6 +8,7 @@ import ScribeDAOLogo from '../../../public/static/ScribeDAO_Logo.svg'
 import { HEADER_NAV_LIST } from '../../data/constants'
 import HeaderNav from './headerNav'
 import MobileSideNavMenu from './mobileSideNavMenu'
+import MobileMenuToggle from './mobileMenuToggle'
 
 export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
@@ -30,17 +31,7 @@ export default function Nav() {
           {/* md breakpoint nav bar */}
           <HeaderNav menuItems={HEADER_NAV_LIST} />
           {/* mobile view hamburger menu */}
-          <Popover
-            as="div"
-            className="-mr-2 -my-2 md:hidden"
-            onClick={() => {
-              setIsMobileMenuOpen(true)
-            }}>
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span className="sr-only">Open menu</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
-            </Popover.Button>
-          </Popover>
+          <MobileMenuToggle toggle={setIsMobileMenuOpen} />
         </section>
       </section>
 
