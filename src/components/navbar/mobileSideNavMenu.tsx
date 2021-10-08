@@ -3,23 +3,23 @@ import { Transition, Dialog, Menu } from '@headlessui/react'
 import { XIcon, ChevronDownIcon } from '@heroicons/react/solid'
 
 import CustomLink from '../customLink'
-import MenuItemProps from '../../shared/IMenuItems'
+import { MenuItemType } from '../../shared/IMenuItems'
 
 export default function MobileSideNavMenu({
   show,
-  onClose,
+  setIsOpen,
   menuItems
 }: {
   show: boolean
-  onClose: Function
-  menuItems: MenuItemProps
+  setIsOpen: (closed: boolean) => void
+  menuItems: MenuItemType[]
 }) {
   return (
     <Transition show={show} as={Fragment}>
       <Dialog
         as="aside"
         className="fixed inset-0 overflow-hidden"
-        onClose={onClose}>
+        onClose={setIsOpen}>
         <div className="absolute inset-0 overflow-hidden">
           {/* grey overlay */}
           <Transition.Child>
@@ -40,7 +40,7 @@ export default function MobileSideNavMenu({
                   <button
                     type="button"
                     className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                    onClick={() => onClose()}>
+                    onClick={() => setIsOpen(false)}>
                     <span className="sr-only">Close panel</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </button>

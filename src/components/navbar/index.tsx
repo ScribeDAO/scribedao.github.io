@@ -26,14 +26,14 @@ export default function Nav() {
 
           <HeaderNav menuItems={HEADER_NAV_LIST} />
 
-          <MobileMenuToggle toggle={setIsMobileMenuOpen} />
+          <MobileMenuToggle setIsOpen={setIsMobileMenuOpen} />
         </section>
       </section>
 
       {/* mobile nav links :open */}
       <MobileSideNavMenu
         show={!!isMobileMenuOpen}
-        onClose={setIsMobileMenuOpen}
+        setIsOpen={setIsMobileMenuOpen}
         menuItems={HEADER_NAV_LIST}
       />
       <hr />

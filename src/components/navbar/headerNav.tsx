@@ -3,7 +3,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 import CustomLink from '../customLink'
-import MenuItemProps from '../../shared/IMenuItems'
+import { MenuItemProps } from '../../shared/IMenuItems'
 
 export default function HeaderNav({ menuItems }: MenuItemProps) {
   return (

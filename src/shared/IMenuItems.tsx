@@ -1,8 +1,8 @@
-export default interface MenuItemProps {
+export interface MenuItemProps {
   menuItems: MenuItemType[]
 }
 
-type MenuItemType = {
+export type MenuItemType = {
   title: string
   href: string
   sublinks?: MenuItemType[]
