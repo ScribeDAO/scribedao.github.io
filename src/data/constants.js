@@ -7,33 +7,33 @@ export const HEADER_NAV_LIST = [
     title: 'The DAO',
     href: '',
     sublinks: [
-      { name: 'About', href: '#' },
-      { name: 'Roadmap', href: '#' },
-      { name: 'Mission', href: '#' },
-      { name: 'Community', href: '#' },
-      { name: 'Governance', href: '#' },
-      { name: 'Team', href: '#' }
+      { title: 'About', href: '#' },
+      { title: 'Roadmap', href: '#' },
+      { title: 'Mission', href: '#' },
+      { title: 'Community', href: '#' },
+      { title: 'Governance', href: '#' },
+      { title: 'Team', href: '#' }
     ]
   },
   {
     title: 'SCRIBE Token',
     href: '',
     sublinks: [
-      { name: 'Token', href: '#' },
-      { name: 'Utilities', href: '#' },
-      { name: 'Juicebox Page', href: '#' }
+      { title: 'Token', href: '#' },
+      { title: 'Utilities', href: '#' },
+      { title: 'Juicebox Page', href: '#' }
     ]
   },
   {
     title: 'Discover',
     href: '',
     sublinks: [
-      { name: 'Learn', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Forum', href: '#' },
-      { name: 'Github', href: '#' },
-      { name: 'Newsletter', href: '#' },
-      { name: 'Downloads', href: '#' }
+      { title: 'Learn', href: '#' },
+      { title: 'Blog', href: '#' },
+      { title: 'Forum', href: '#' },
+      { title: 'Github', href: '#' },
+      { title: 'Newsletter', href: '#' },
+      { title: 'Downloads', href: '#' }
     ]
   },
   {
