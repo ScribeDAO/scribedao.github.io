@@ -7,6 +7,10 @@
     "build": "next build",
     "build:prod": "next build && next export",
     "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e:local": "start-server-and-test dev 3000 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --pretty --noEmit",
@@ -44,6 +48,7 @@
     "postcss": "^8.3.8",
     "prettier": "2.4.1",
     "prettier-config-standard": "^4.0.0",
+    "start-server-and-test": "^1.14.0",
     "tailwindcss": "^2.2.16",
     "typescript": "4.4.2"
   }
