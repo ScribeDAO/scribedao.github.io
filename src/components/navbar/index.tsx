@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import CustomLink from '../customLink'
-import ScribeDAOLogo from '../../../public/static/ScribeDAO_Logo.svg'
 
 import { HEADER_NAV_LIST } from '../../data/constants'
 import HeaderNav from './headerNav'
@@ -17,7 +16,7 @@ export default function Nav() {
         <section className="flex justify-between items-center">
           <CustomLink href="/">
             <Image
-              src={ScribeDAOLogo}
+              src="/static/ScribeDAO_Logo.svg"
               alt="ScribeDAO"
               width={180}
               height={35}
