@@ -21,9 +21,11 @@ export default function Layout({
           content="We summarize crypto articles that you don't have time to read entirely."
         />
       </Head>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
+      {/* <Navbar /> */}
+      <main className="lg:container lg:mx-auto lg:px-20 xl:px-28 px-4 sm:px-8 md:px-18">
+        {children}
+      </main>
+      {/* <Footer /> */}
     </div>
   )
 }
