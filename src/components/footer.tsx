@@ -2,7 +2,7 @@ import Image from 'next/image'
 import CustomLink from './customLink'
 import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa'
 
-import { FOOTER_NAV_LIST } from '../data/constants'
+// import { FOOTER_NAV_LIST } from '../data/constants'
 
 export default function Footer() {
   return (
@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        {FOOTER_NAV_LIST.map(({ title, items }) => (
+        {/* {FOOTER_NAV_LIST.map(({ title, items }) => (
           <div key={title}>
             <h5 className="">{title}</h5>
             <div className="flex flex-col">
@@ -57,15 +57,15 @@ export default function Footer() {
               ))}
             </div>
           </div>
-        ))}
+        ))} */}
       </nav>
       <hr />
       <footer className="lg:container lg:mx-auto xl:text-lg px-4 sm:px-8 md:px-16 lg:px-20 mb-4 sm:mb-8 md:mb-16 mt-8 sm:mt-12 md:mt-16 lg:flex">
         <p className="mb-2 lg:mb-0 lg:flex-1">
-          © 2021 ScribeDAO. All Rights Reserved
+          © {new Date().getFullYear()} ScribeDAO. All Rights Reserved
         </p>
         <div>
-          <CustomLink
+          {/* <CustomLink
             className="hover:text-gray-800 whitespace-nowrap"
             href="#">
             Privacy Policy
@@ -87,7 +87,7 @@ export default function Footer() {
             className="hover:text-gray-800 whitespace-nowrap"
             href="#">
             Disclaimer
-          </CustomLink>
+          </CustomLink> */}
         </div>
       </footer>
     </aside>

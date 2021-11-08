@@ -23,7 +23,7 @@ const DiscordLogo = ({ ...props }: SVGProps<SVGSVGElement>) => (
 const Home = () => {
   return (
     <Layout>
-      <main className="text-black text-lg mt-8 md:mt-16 md:px-10 lg:px-32 2xl:px-64">
+      <main className="text-black text-lg mt-8 md:px-10 lg:px-32 2xl:px-64">
         <section>
           <h1 className="text-4xl font-bold">
             What is <span className="text-[#6268dc]">ScribeDAO?</span>
@@ -63,7 +63,7 @@ const Home = () => {
             </li>
           </ul>
         </section>
-        <section>
+        <section className="mb-16">
           <h3 className="text-3xl font-bold">Funding</h3>
           <ul className="list-disc ml-8">
             <li>
@@ -81,25 +81,6 @@ const Home = () => {
               Have the ability to reduce your contribution cost to 0 over time.
             </li>
           </ul>
-        </section>
-        <section className="flex justify-center items-center my-4">
-          <a
-            href="https://discord.com/invite/ySFKTEyGn8"
-            target="_blank"
-            rel="noreferrer"
-            className="group">
-            <DiscordLogo className="h-8 mr-4 mx-auto group-hover:fill-[#6268dcd2] fill-[#6268dc]" />
-          </a>
-          <a
-            href="https://twitter.com/scribedao"
-            target="_blank"
-            rel="noreferrer"
-            className="group">
-            <AiOutlineTwitter
-              size={40}
-              className="mx-auto group-hover:fill-[#1a8cd8] fill-[#1a8cd8]"
-            />
-          </a>
         </section>
       </main>
     </Layout>
