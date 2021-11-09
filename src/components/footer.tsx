@@ -31,13 +31,19 @@ export default function Footer() {
           <div>
             <h5>Connect with us</h5>
             <div className="flex">
-              <CustomLink className="hover:text-gray-800 mr-4" href="#">
+              <CustomLink
+                className="hover:text-gray-800 mr-4"
+                href="https://twitter.com/scribedao">
                 <FaTwitter className="text-2xl" />
               </CustomLink>
-              <CustomLink className="hover:text-gray-800 mr-4" href="#">
+              <CustomLink
+                className="hover:text-gray-800 mr-4"
+                href="https://github.com/ScribeDAO">
                 <FaGithub className="text-2xl" />
               </CustomLink>
-              <CustomLink className="hover:text-gray-800 mr-4" href="#">
+              <CustomLink
+                className="hover:text-gray-800 mr-4"
+                href="https://discord.com/invite/ySFKTEyGn8">
                 <FaDiscord className="text-2xl" />
               </CustomLink>
             </div>
