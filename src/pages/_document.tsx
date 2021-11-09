@@ -46,6 +46,29 @@ class CustomDocument extends Document {
             sizes="16x16"
             type="image/png"
           />
+          <meta property="og:url" content="https://scribedao.com/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="ScribeDAO" />
+          <meta
+            property="og:description"
+            content="Curating and simplifying the endless stream of crypto content."
+          />
+          <meta
+            property="og:image"
+            content="https://scribedao.vercel.app/static/favicons/apple-touch-icon-120x120.png"
+          />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://scribedao.com/" />
+          <meta name="twitter:title" content="ScribeDAO" />
+          <meta
+            name="twitter:description"
+            content="Curating and simplifying the endless stream of crypto content."
+          />
+          <meta
+            name="twitter:image"
+            content="https://scribedao.vercel.app/static/favicons/apple-touch-icon-120x120.png"
+          />
         </Head>
         <body>
           <Main />

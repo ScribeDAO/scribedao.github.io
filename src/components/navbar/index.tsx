@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import Image from 'next/image'
 import CustomLink from '../customLink'
 
-import { HEADER_NAV_LIST } from '../../data/constants'
-import HeaderNav from './headerNav'
-import MobileSideNavMenu from './mobileSideNavMenu'
-import MobileMenuToggle from './mobileMenuToggle'
+// import { HEADER_NAV_LIST } from '../../data/constants'
+// import HeaderNav from './headerNav'
+// import MobileSideNavMenu from './mobileSideNavMenu'
+// import MobileMenuToggle from './mobileMenuToggle'
 
 export default function Nav() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   return (
     <nav>
@@ -23,18 +23,18 @@ export default function Nav() {
             />
           </CustomLink>
 
-          <HeaderNav menuItems={HEADER_NAV_LIST} />
+          {/* <HeaderNav menuItems={HEADER_NAV_LIST} /> */}
 
-          <MobileMenuToggle setIsOpen={setIsMobileMenuOpen} />
+          {/* <MobileMenuToggle setIsOpen={setIsMobileMenuOpen} /> */}
         </section>
       </section>
 
       {/* mobile nav links :open */}
-      <MobileSideNavMenu
+      {/* <MobileSideNavMenu
         show={!!isMobileMenuOpen}
         setIsOpen={setIsMobileMenuOpen}
         menuItems={HEADER_NAV_LIST}
-      />
+      /> */}
       <hr />
     </nav>
   )
