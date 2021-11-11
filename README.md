@@ -16,6 +16,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
+See `contributions.md` for a more thorough explanation of how to get the ball rolling on your local machine!
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
